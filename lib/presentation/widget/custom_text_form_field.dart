@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class CustomTextField extends StatefulWidget {
   final TextEditingController controller;
   final String hintText;
-  final IconData prefixIcon;
   late bool colorFlag;
   final String? Function(String?)? validator;
 
@@ -11,7 +10,6 @@ class CustomTextField extends StatefulWidget {
     super.key,
     required this.controller,
     required this.hintText,
-    required this.prefixIcon,
     required this.colorFlag,
     this.validator,
   });
@@ -33,10 +31,6 @@ class _CustomTextFieldState extends State<CustomTextField> {
       controller: widget.controller,
       decoration: InputDecoration(
         hintText: widget.hintText,
-        prefixIcon: Icon(
-          widget.prefixIcon,
-          color: widget.colorFlag ? null : Colors.red,
-        ),
         hintStyle: const TextStyle(
           color: Color(0xFF9098B1),
           fontSize: 12,
@@ -46,7 +40,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         enabledBorder: OutlineInputBorder(
           borderSide: BorderSide(
             width: 1,
-            color: widget.colorFlag ? const Color(0xFFEAEFFF) : Colors.red,
+            color: widget.colorFlag ? Colors.black12 : Colors.red,
           ),
           borderRadius: BorderRadius.circular(5),
         ),
