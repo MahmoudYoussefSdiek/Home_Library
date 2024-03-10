@@ -39,6 +39,12 @@ class _HomeLayoutState extends State<HomeLayout> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: _pages[_selectedIndex],
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            insertToDatabase();
+          },
+          child: const Icon(Icons.add),
+        ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
@@ -68,7 +74,7 @@ class _HomeLayoutState extends State<HomeLayout> {
         print('database created');
         database
             .execute(
-                'CREATE TABLE books (id INTEGER PRIMARY KEY, bookName TEXT, authorName TEXT)')
+                'CREATE TABLE books (id INTEGER PRIMARY KEY, bookName TEXT, authorName TEXT, category TEXT, shelf INTEGER, part INTEGER)')
             .then((value) => print('table created'))
             .catchError((error) {
           print('error creating table ${error.toString()}');
@@ -80,5 +86,16 @@ class _HomeLayoutState extends State<HomeLayout> {
     );
   }
 
-  void insertToDatabase() {}
+  void insertToDatabase() {
+    database.transaction((txn) async {
+      await txn
+          .rawInsert(
+              'INSERT INTO books(bookName, authorName, category, shelf, part) VALUES("bookTest", "authorTest", "categoryTest", 1, 1)')
+          .then((value) {
+        print('$value inserted successfully');
+      }).catchError((error) {
+        print('error when inserting new record ${error.toString()}');
+      });
+    });
+  }
 }
