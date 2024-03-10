@@ -12,19 +12,25 @@ class BookScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Here you can see all your books, with information about them.',
+              'Here you can see all your books with information.',
               softWrap: true, // Allow the text to wrap to the next line
               overflow: TextOverflow.clip,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 16,
+                color: Colors.blue,
+                fontSize: 18,
+                fontWeight: FontWeight.w300,
+                letterSpacing: 0.50,
               ),
-              ),
+            ),
             SizedBox(height: 20),
             Text(
               'Work in progress...',
               style: TextStyle(
-                fontSize: 16,
+                color: Colors.blue,
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 5,
               ),
             ),
           ],

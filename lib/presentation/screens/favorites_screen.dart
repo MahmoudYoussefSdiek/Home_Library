@@ -13,19 +13,26 @@ class FavoritesScreen extends StatelessWidget {
           children: [
             Text(
               'Here you can see all books you marked it as favorites.',
-              softWrap: true, // Allow the text to wrap to the next line
+              softWrap: true,
               overflow: TextOverflow.clip,
               textAlign: TextAlign.center,
               style: TextStyle(
-                fontSize: 16,
+                color: Colors.blue,
+                fontSize: 18,
+                fontWeight: FontWeight.w300,
+                letterSpacing: 0.50,
               ),
             ),
             SizedBox(height: 20),
-            Text('Work in progress...',
-                style: TextStyle(
-                  fontSize: 16,
-                ),
-                ),
+            Text(
+              'Work in progress...',
+              style: TextStyle(
+                color: Colors.blue,
+                fontSize: 24,
+                fontWeight: FontWeight.w600,
+                letterSpacing: 5,
+              ),
+            ),
           ],
         ),
       ),
