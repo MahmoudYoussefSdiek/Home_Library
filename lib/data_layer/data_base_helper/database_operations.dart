@@ -1,3 +1,4 @@
+import 'package:home_library/data_layer/model/book.dart';
 import 'package:sqflite/sqflite.dart';
 
 late final Database database;
@@ -36,4 +37,18 @@ void insertToDatabase(String bookName, String authorName, String category,
       print('error when inserting new record ${error.toString()}');
     });
   });
+}
+
+Future<List<Book>> searchBooksByName(String name) async {
+  final List<Map<String, dynamic>> results = await database.query(
+    'books',
+    where: 'bookName LIKE ?',
+    whereArgs: ['%$name%'],
+  );
+  return results.map((e) => Book.fromJson(e)).toList();
+}
+
+Future<List<Book>> getAllBooks() async {
+  final List<Map<String, dynamic>> results = await database.query('books');
+  return results.map((e) => Book.fromJson(e)).toList();
 }
