@@ -1,3 +1,8 @@
+/*
+* This file contains the BookScreen which is responsible for displaying
+* all the books in the database.
+ */
+
 import 'package:flutter/material.dart';
 import 'package:home_library/data_layer/data_base_helper/database_operations.dart';
 import 'package:home_library/data_layer/model/book.dart';
@@ -45,7 +50,7 @@ class _BookScreenState extends State<BookScreen> {
                   itemCount: _books.length * 2 - 1,
                   itemBuilder: (context, index) {
                     if (index.isOdd) {
-                      return const Divider(); // Add a Divider between items
+                      return const Divider();
                     }
                     final bookIndex = index ~/ 2;
                     final book = _books[bookIndex];

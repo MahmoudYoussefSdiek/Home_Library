@@ -1,3 +1,13 @@
+/*
+* This file contains the database operations [Create, Insert, Search, Get All]
+* delete and update operations are not implemented in this file [Work in progress]
+*
+* The database is created using the sqflite package
+*
+* we have a database object that is used to perform the operations and it is
+* only one instance of the database for the entire application lifecycle [like a singleton]
+ */
+
 import 'package:home_library/data_layer/model/book.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -8,7 +18,6 @@ void createDatabase() async {
     'library.db',
     version: 1,
     onCreate: (database, version) {
-      print('database created');
       database
           .execute(
             'CREATE TABLE books (id INTEGER PRIMARY KEY, bookName TEXT, authorName TEXT, category TEXT, shelf INTEGER, section INTEGER)',

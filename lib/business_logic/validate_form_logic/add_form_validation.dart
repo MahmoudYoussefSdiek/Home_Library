@@ -1,3 +1,14 @@
+/*
+* This file contains the validation logic for the add form that checks on
+*  [book name, author name, category, shelf, section].
+*
+* parameters:
+*       [String] is the value we check our validation.
+*
+*       [void Function(bool)] is the callback function that we use to set the state of the form.
+*       so i can use it decide later what is the border color.
+ */
+
 String? validateBookName(
     String? bookName, void Function(bool) setStateCallback) {
   if (bookName == null || bookName.isEmpty) {

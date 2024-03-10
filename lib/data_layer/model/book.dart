@@ -1,3 +1,14 @@
+/*
+* Model class for Book
+*
+* This class is used to create a Book object from the JSON response that we get
+* from the database.
+* we have only fromJson method because we are not sending multiple books to the
+* database so we don't need toJson method [user can add one record per time], but
+* we receive multiple books from the database so we need fromJson method to convert
+* it and as list of books.
+ */
+
 class Book {
   final int id;
   final String bookName;

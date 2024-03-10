@@ -1,3 +1,8 @@
+/*
+* This file contains the HomeScreen which is the first screen that the user sees when the app is opened.
+* It contains a search bar to search for books in the library.
+ */
+
 import 'package:flutter/material.dart';
 import 'package:home_library/data_layer/model/book.dart';
 import 'package:home_library/data_layer/data_base_helper/database_operations.dart';

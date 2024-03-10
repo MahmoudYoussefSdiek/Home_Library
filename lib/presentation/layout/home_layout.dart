@@ -1,3 +1,36 @@
+/*
+* This file contains the main layout of the app.
+*
+* I use the combination of MVC and Clean Architecture concept.
+*
+* My Architecture [Presentation Layer presenter calls Business Logic Layer presenter
+* and Business Logic Layer calls Data Layer presenter]:
+*     - Presentation Layer: Contains the UI.
+*     - Data Layer: Contains the database operations and class model.
+*     - Business Logic Layer: Contains the code logic of the app and
+*       State Management, I didn't use State Management because the app is small
+*       but App is ready for it with small changes.
+*
+*   * Presentation Layer [layout contains screens and screens contains widgets]:
+*     - layout: Is responsible for getting the data from the business logic layer and
+*      inject it into the screens.
+*      with this approach, I can change the UI without changing the business logic layer
+*      or without messing with data so now screens and widgets are focused on UI only.
+*      and if there is any problem or change in data we handel it from layout.
+*    - screens: Is responsible for getting the data from the layout and inject it into the widgets.
+*     so screens focus on struct UI together by combining widgets.
+*   - widgets: Is responsible for getting the data from the screens and inject it into the UI.
+*     so it is the smallest part of UI.
+*
+*  * Business Logic Layer [contains business logic and state management]:
+*    - presenter: Is responsible for getting the data from the data layer and inject it into the layout.
+*     so it is the middle between data and UI.
+*
+*  * Data Layer [contains database operations and class model]:
+*    - It is responsible for getting the data from the database and inject it into the business logic layer.
+*     we can say it is responsible for outside world data [local/remote database, APIs].
+ */
+
 import 'package:flutter/material.dart';
 import 'package:home_library/data_layer/data_base_helper/database_operations.dart';
 import 'package:home_library/presentation/screens/books_screen.dart';

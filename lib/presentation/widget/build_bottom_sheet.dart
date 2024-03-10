@@ -1,3 +1,9 @@
+/*
+  This file contains the widget to build the bottom sheet for adding a new book.
+  It contains a form with 5 text fields and a save button.
+  The form is validated using the business logic from the file add_form_validation.dart
+ */
+
 import 'package:flutter/material.dart';
 import 'package:home_library/business_logic/validate_form_logic/add_form_validation.dart';
 import 'package:home_library/presentation/widget/custom_text_form_field.dart';

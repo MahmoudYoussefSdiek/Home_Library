@@ -1,3 +1,12 @@
+/*
+  CustomButton is a reusable widget that can be used to create a button with a custom style.
+  It takes two required parameters:
+  1. function: VoidCallback
+  2. text: String
+
+  I didn't use it for now but in the future i will use it for search, add, delete, update, and other buttons.
+ */
+
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {

@@ -1,3 +1,7 @@
+/*
+ * This file is responsible for showing the favorites Books [Work in progress...].
+ */
+
 import 'package:flutter/material.dart';
 
 class FavoritesScreen extends StatelessWidget {

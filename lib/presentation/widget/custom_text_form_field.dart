@@ -1,3 +1,10 @@
+/*
+  CustomTextField is a custom widget that is used to create a text field with a custom design.
+  It takes a TextEditingController, hintText, colorFlag, and validator as required parameters.
+  The colorFlag is used to change the color of the border of the text field.
+  The validator is used to validate the text field.
+*/
+
 import 'package:flutter/material.dart';
 
 class CustomTextField extends StatefulWidget {
